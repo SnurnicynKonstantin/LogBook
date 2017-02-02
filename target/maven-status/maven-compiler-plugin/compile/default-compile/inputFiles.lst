@@ -1,0 +1,10 @@
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/dao/EmployeeDao.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/dao/AbstractDao.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/service/EmployeeServiceImpl.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/service/EmployeeService.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/configuration/HibernateConfiguration.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/configuration/AppConfig.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/model/Employee.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/dao/EmployeeDaoImpl.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/configuration/AppInitializer.java
+/home/konstantin/IdeaProjects2/logbook/src/main/java/ru/ks_on_v/controller/AppController.java
