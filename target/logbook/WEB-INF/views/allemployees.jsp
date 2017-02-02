@@ -14,6 +14,8 @@
            }
         </style>
 
+        <link rel="stylesheet" href="./resources/css/style.css" type="text/css"/>
+
     </head>
 
 
@@ -27,6 +29,10 @@
                 </div>
                 <div class="col-xs-12 col-sm-9">
                     <%@ include file="./templates/news.jsp" %>
+                    <div class="row">
+                        <%@ include file="./templates/carItem.jsp" %>
+                        <%@ include file="./templates/carItem.jsp" %>
+                    </div>
                 </div>
             </div>
         </div>
