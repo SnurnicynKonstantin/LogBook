@@ -33,9 +33,6 @@ public class IndexController {
     @Autowired
     MessageSource messageSource;
 
-    /*
-     * This method will list all existing employees.
-     */
     @RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
     public String listEmployees(ModelMap model) {
 
@@ -136,3 +133,20 @@ public class IndexController {
     }
 
 }
+
+//actor.setName(«Телка из массовки звать Маня»);  Запись
+//        Cast cast = new Cast();
+//        cast.setVideo(video);
+//        cast.setActor(actor);
+//        Session session = factory.openSession();
+//        session.beginTransaction();
+//        session.saveOrUpdate(video);
+//        session.saveOrUpdate(actor);
+//        session.saveOrUpdate(cast);
+//        session.getTransaction().commit();
+//        session.close();
+
+//    Session session = factory.openSession();   Запись
+//    Actor actor = (Actor)session.get(Actor.class,new Long(1));
+//session.close();
+//        System.out.println(actor.getName());

@@ -16,15 +16,19 @@ public class Car {
     @Column(name = "NICK", nullable = false)
     private String nick;
 
-    @NotNull
-    @Digits(integer=8, fraction=2)
-    @Column(name = "mark_id", nullable = false)
-    private int markId;
+//    @NotNull
+//    @Digits(integer=8, fraction=2)
+//    @Column(name = "mark_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name="mark_id")
+    private Mark mark;
 
-    @NotNull
-    @Digits(integer=8, fraction=2)
-    @Column(name = "model_id", nullable = false)
-    private int modelId;
+//    @NotNull
+//    @Digits(integer=8, fraction=2)
+//    @Column(name = "model_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name="model_id")
+    private Model model;
 
     @Digits(integer=8, fraction=2)
     @Column(name = "year", nullable = false)
@@ -51,20 +55,20 @@ public class Car {
         this.nick = nick;
     }
 
-    public int getMarkId() {
-        return markId;
+    public Mark getMark() {
+        return mark;
     }
 
-    public void setMarkId(int markId) {
-        this.markId = markId;
+    public void setMark(Mark mark) {
+        this.mark = mark;
     }
 
-    public int getModelId() {
-        return modelId;
+    public Model getModel() {
+        return model;
     }
 
-    public void setModelId(int modelId) {
-        this.modelId = modelId;
+    public void setModelId(Model model) {
+        this.model = model;
     }
 
     public int getYear() {
@@ -97,8 +101,6 @@ public class Car {
             return true;
         if (obj == null)
             return false;
-        if (!(obj instanceof Employee))
-            return false;
         Car other = (Car) obj;
         if (id != other.id)
             return false;
@@ -107,6 +109,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return modelId + " " + markId + " " + nick;
+        return mark.getMark() + " " + model.getModel() + " " + nick;
     }
 }

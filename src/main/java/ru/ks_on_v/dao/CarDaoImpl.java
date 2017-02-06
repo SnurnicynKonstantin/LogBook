@@ -14,4 +14,11 @@ public class CarDaoImpl extends AbstractDao<Integer, Car> implements CarDao{
         Criteria criteria = createEntityCriteria();
         return (List<Car>) criteria.list();
     }
+
+    @Override
+    public Car getCar(int id) {
+        Criteria criteria = createEntityCriteria();
+        return null;
+    }
+
 }

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface CarDao {
     List<Car> findAllCars();
+
+    Car getCar(int id);
 }

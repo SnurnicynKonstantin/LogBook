@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
-        <title>University Enrollments</title>
+        <title>Logbook</title>
 
         <style>
             tr:first-child{
@@ -31,7 +31,6 @@
                     <%@ include file="./templates/news.jsp" %>
                     <div class="row">
                         <c:forEach items="${cars}" var="car">
-                            ${car.nick}
                             <c:set var="car" value="${car}" scope="request" ></c:set>
                             <%@ include file="./templates/carItem.jsp" %>
                         </c:forEach>
