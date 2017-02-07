@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Set;
 
 @Entity
 @Table(name="CARS")
@@ -16,16 +17,10 @@ public class Car {
     @Column(name = "NICK", nullable = false)
     private String nick;
 
-//    @NotNull
-//    @Digits(integer=8, fraction=2)
-//    @Column(name = "mark_id", nullable = false)
     @ManyToOne
     @JoinColumn(name="mark_id")
     private Mark mark;
 
-//    @NotNull
-//    @Digits(integer=8, fraction=2)
-//    @Column(name = "model_id", nullable = false)
     @ManyToOne
     @JoinColumn(name="model_id")
     private Model model;
@@ -38,6 +33,18 @@ public class Car {
     @Size(min=10, max=50)
     @Column(name = "img_url", nullable = false)
     private String imgUrl;
+
+    @NotNull
+    @Size(min=10, max=1000)
+    @Column(name = "about", nullable = false)
+    private String about;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "detail_car", joinColumns = {
+            @JoinColumn(name = "car_id", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "detail_id",
+                    nullable = false, updatable = false) })
+    public Set<Detail> details;
 
     public int getId() {
         return id;
@@ -85,6 +92,14 @@ public class Car {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     @Override

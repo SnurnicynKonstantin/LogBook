@@ -1,9 +1,9 @@
 package ru.ks_on_v.dao;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import ru.ks_on_v.model.Car;
-import ru.ks_on_v.model.Employee;
 
 import java.util.List;
 
@@ -18,7 +18,8 @@ public class CarDaoImpl extends AbstractDao<Integer, Car> implements CarDao{
     @Override
     public Car getCar(int id) {
         Criteria criteria = createEntityCriteria();
-        return null;
+        criteria.add(Restrictions.eq("id", id));
+        return (Car) criteria.uniqueResult();
     }
 
 }
