@@ -4,13 +4,14 @@ import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name="CARS")
 public class Car {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
 
     @Size(min=3, max=50)
@@ -39,12 +40,14 @@ public class Car {
     @Column(name = "about", nullable = false)
     private String about;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "detail_car", joinColumns = {
-            @JoinColumn(name = "car_id", nullable = false, updatable = false) },
-            inverseJoinColumns = { @JoinColumn(name = "detail_id",
-                    nullable = false, updatable = false) })
-    public Set<Detail> details;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "detail_car",
+            joinColumns = @JoinColumn(name = "car_id", referencedColumnName="id"),
+            inverseJoinColumns = @JoinColumn(name = "detail_id", referencedColumnName="id"))
+    private List<Detail> details;
+
+    //https://www.mkyong.com/hibernate/hibernate-many-to-many-relationship-example-annotation/
 
     public int getId() {
         return id;
@@ -100,6 +103,14 @@ public class Car {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public List<Detail> getDetails() {
+        return details;
+    };
+
+    public void setDetails(List<Detail> details) {
+        this.details = details;
     }
 
     @Override

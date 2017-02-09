@@ -8,7 +8,7 @@ import java.util.Set;
 @Table(name="Details")
 public class Detail {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
 
     @Size(min=3, max=50)
