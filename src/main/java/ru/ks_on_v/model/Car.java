@@ -47,8 +47,6 @@ public class Car {
             inverseJoinColumns = @JoinColumn(name = "detail_id", referencedColumnName="id"))
     private List<Detail> details;
 
-    //https://www.mkyong.com/hibernate/hibernate-many-to-many-relationship-example-annotation/
-
     public int getId() {
         return id;
     }
