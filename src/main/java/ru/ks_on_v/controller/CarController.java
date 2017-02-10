@@ -13,6 +13,7 @@ import ru.ks_on_v.model.Detail;
 import ru.ks_on_v.service.CarService;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/")
@@ -24,8 +25,9 @@ public class CarController {
     @RequestMapping(value = { "/show-{id}-car" }, method = RequestMethod.GET)
     public String showCat(@PathVariable int id, ModelMap model) {
         Car car = carService.getCar(id);
-        List <Detail> details = car.getDetails();
+        Map details = carService.groupDetails(car.getDetails());
         model.addAttribute("car", car);
+        model.addAttribute("details", details);
         return "showCar";
     }
 }
