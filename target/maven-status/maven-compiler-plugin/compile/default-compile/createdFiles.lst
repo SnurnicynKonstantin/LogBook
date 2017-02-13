@@ -1,10 +1,10 @@
 ru/ks_on_v/model/Employee.class
+ru/ks_on_v/configuration/AppSecurityConfig.class
+ru/ks_on_v/configuration/AppConfig.class
 ru/ks_on_v/service/EmployeeService.class
 ru/ks_on_v/dao/AbstractDao.class
-ru/ks_on_v/controller/AppController.class
+ru/ks_on_v/dao/EmployeeDao.class
+ru/ks_on_v/configuration/HibernateConfiguration.class
 ru/ks_on_v/dao/EmployeeDaoImpl.class
 ru/ks_on_v/service/EmployeeServiceImpl.class
-ru/ks_on_v/dao/EmployeeDao.class
 ru/ks_on_v/configuration/AppInitializer.class
-ru/ks_on_v/configuration/AppConfig.class
-ru/ks_on_v/configuration/HibernateConfiguration.class
